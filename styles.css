@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background-image:url("beautiful-night-sky-with-shiny-stars.jpg");
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat;
+}
+
+
+button{background-color:white;
+      color:rgba(1, 1, 21, 0.6);
+      font-size:16px;
+      border-radius:12px;
+      cursor:pointer;
+      z-index:100;
+      }
+
+button:hover {box-shadow:0 8px 16px 0 rgba(242, 248, 254, 0.6)}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+input, button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+
+
+.star {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle, white 40%, transparent 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px 10px rgba(197, 233, 250, 0.6);
+  opacity: 0;
+}
+
+
+@keyframes fly-across {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(100vw - 100px), calc(100vh - 100px)) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.star.animate {
+  animation: fly-across 3s ease-in-out forwards;
+  opacity: 1;
+}
+
+.back{
+   opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  margin-top: 200px;
+  display: block;}
+
+.back.visible{ opacity: 1;
+  pointer-events: auto;}
+
+#message{ position: absolute;     /* <-- теперь текст вне потока */
+  top: 50%;               /* по вертикали по центру */
+  left: 50%;              /* по горизонтали по центру */
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 10;  
+}
