@@ -17,7 +17,7 @@ star.addEventListener('animationend', () => {
 });
 
 button.addEventListener('click', () => {
-  window.location.href = 'wish.html'; 
+  window.location.href = 'index.html'; 
 });
 
 const message = document.getElementById('message');
