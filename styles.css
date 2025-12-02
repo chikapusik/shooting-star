@@ -1,6 +1,9 @@
+html body{margin:0;
+    height:100%;
+    width:100%;}
+
 body {
-  margin: 0;
-  height: 100vh;
+ 
   background-image:url("photo_2025-12-02_19-17-52.jpg");
   overflow: hidden;
   display: flex;
