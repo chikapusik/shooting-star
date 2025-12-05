@@ -23,7 +23,8 @@ button{background-color:white;
       z-index:100;
       }
 
-button:hover {box-shadow:0 8px 16px 0 rgba(242, 248, 254, 0.6)}
+button:hover {box-shadow:0 8px 16px 0 rgba(242, 248, 254, 0.6);
+              }
 
 .form-container {
   position:absolute;
@@ -41,7 +42,7 @@ button:hover {box-shadow:0 8px 16px 0 rgba(242, 248, 254, 0.6)}
 .form-container button{width:60%;
 max-width:200px;
 align-self:center;
-cursor:pointer;G}
+cursor:pointer;}
 
 .form-container input{width:100%;}
 
@@ -93,12 +94,12 @@ input, button {
 .back.visible{ opacity: 1;
   pointer-events: auto;}
 
-#message{ position: absolute;     /* <-- теперь текст вне потока */
-  top: 50%;               /* по вертикали по центру */
-  left: 50%;              /* по горизонтали по центру */
+#message{ position: absolute;     
+  top: 50%;               
+  left: 50%;              
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 2rem;
+  font-size: 1.8rem;
   opacity: 0;
   transition: opacity 1s ease;
   z-index: 10;  
@@ -118,4 +119,8 @@ input, button {
     width: 14px;
     height: 14px;
   }
+}
+
+button, .form-container button, .back {
+  cursor: pointer !important;
 }
