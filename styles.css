@@ -96,7 +96,7 @@ input, button {
 
 .back.visible{ opacity: 1;
   pointer-events: auto;}
-
+.message-container{position:relative;}
 #message{ position: absolute;     
   top: 50%;               
   left: 50%;              
@@ -110,7 +110,8 @@ input, button {
 @media (max-width: 480px) {
   #message {
     font-size: 1.4rem;
-    width: 90%;
+    max-width: 90%;
+    width:auto;
   }
 
   button, input {
@@ -131,5 +132,3 @@ button, .form-container button, .back {
 @media (max-width: 360px) {.form-container input{max-width:260px;}
   }
 
- @media (max-width: 360px) {.message {max-width:260px;}
-  }
