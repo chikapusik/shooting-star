@@ -101,6 +101,7 @@ input, button {
   top: 50%;               
   left: 50%;              
   transform: translate(-50%, -50%);
+  align-self:center;
   color: white;
   font-size: 1.8rem;
   opacity: 0;
@@ -129,4 +130,7 @@ button, .form-container button, .back {
 }
 
 @media (max-width: 360px) {.form-container input{max-width:260px;}
+  }
+
+ @media (max-width: 360px) {.message {max-width:260px;}
   }
