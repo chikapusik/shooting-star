@@ -96,15 +96,25 @@ input, button {
 
 .back.visible{ opacity: 1;
   pointer-events: auto;}
-.message-container{position:relative;}
-#message{ position: absolute;     
-  top: 50%;               
-  left: 50%;              
-  transform: translate(-50%, -50%);
+.message-container{position:fixed;
+      top:0;
+      left:0;
+      width:100vw;
+      height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    pointer-events:none;
+    z-index:9999;}
+#message{ position: static;     
+             
+  
   color: white;
   font-size: 1.8rem;
   opacity: 0;
   transition: opacity 1s ease;
+  text-alignLcenter;
+  max-width:90%;
   z-index: 10;  
 }
 @media (max-width: 480px) {
@@ -132,26 +142,25 @@ button, .form-container button, .back {
 @media (max-width: 360px) {.form-container input{max-width:260px;}
   }
 
-/* 1) Гарантируем, что анимированная звезда и сообщение НЕ мешают кликам */
+
 .star,
 .message-container,
 #message {
-  pointer-events: none; /* они не будут ловить касания */
+  pointer-events: none;
 }
 
-/* 2) Поднимаем форму наверх стэкинга и разрешаем ей ловить клики */
+
 .form-container {
-  z-index: 9999;        /* выше всех */
-  pointer-events: auto; /* явное разрешение на клики */
+  z-index: 9999;        
+  pointer-events: auto; 
 }
 
-/* 3) Подстраховка: кнопка внутри формы всегда над слоями */
 .form-container button {
   position: relative;
   z-index: 10000;
 }
 
-/* Для уверенности — звезде укажем что она не мешает даже при анимации */
+
 .star {
   will-change: transform;
   -webkit-tap-highlight-color: transparent;
