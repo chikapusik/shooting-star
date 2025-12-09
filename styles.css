@@ -132,3 +132,27 @@ button, .form-container button, .back {
 @media (max-width: 360px) {.form-container input{max-width:260px;}
   }
 
+/* 1) Гарантируем, что анимированная звезда и сообщение НЕ мешают кликам */
+.star,
+.message-container,
+#message {
+  pointer-events: none; /* они не будут ловить касания */
+}
+
+/* 2) Поднимаем форму наверх стэкинга и разрешаем ей ловить клики */
+.form-container {
+  z-index: 9999;        /* выше всех */
+  pointer-events: auto; /* явное разрешение на клики */
+}
+
+/* 3) Подстраховка: кнопка внутри формы всегда над слоями */
+.form-container button {
+  position: relative;
+  z-index: 10000;
+}
+
+/* Для уверенности — звезде укажем что она не мешает даже при анимации */
+.star {
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+}
